@@ -1,0 +1,25 @@
+<template>
+  <style>
+    i.inner {
+      background-color: yellowgreen;
+    }
+  </style>
+  <i class="inner">
+    Hello, Custom Component with Shadow And Template!
+  </i>
+</template>
+<script defer>
+  const markDoc = document.currentScript.ownerDocument;
+  console.log(markDoc);
+
+  class HelloCustomElementShadowTemplate extends HTMLElement {
+    constructor() {
+      super();
+      const shadow = this.attachShadow({mode: 'open'});
+      const content = markDoc.querySelector('template').content.cloneNode(true);
+      shadow.appendChild(content);
+    }
+  }
+
+  customElements.define('hello-custom-element-shadow-template', HelloCustomElementShadowTemplate);
+</script>

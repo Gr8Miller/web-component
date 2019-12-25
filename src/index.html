@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Web Component</title>
+  <script type="text/javascript">
+    function toElement(html) {
+      const $div = document.createElement('div');
+      $div.insertAdjacentHTML('beforeend', html);
+      return $div.firstChild;
+    }
+  </script>
+  <style>
+    i.inner {
+      color: red;
+    }
+  </style>
+  <script type="text/javascript" src="hello-custom-element.js"></script>
+  <script type="text/javascript" src="hello-custom-element-extends.js"></script>
+  <!--  <script type="text/javascript" src="hello-custom-element-builtin.js"></script>-->
+  <!--  <script type="text/javascript" src="hello-custom-element-shadow.js"></script>-->
+  <!--  <link rel="import" href="hello-custom-element-shadow-template.html">-->
+</head>
+<body>
+<!--<hello-custom-element></hello-custom-element>-->
+<hello-custom-element-extends></hello-custom-element-extends>
+<!--<p is="hello-custom-element-builtin"></p>-->
+<!--<hello-custom-element-shadow></hello-custom-element-shadow>-->
+<!--<hello-custom-element-shadow-template></hello-custom-element-shadow-template>-->
+</body>
+</html>
