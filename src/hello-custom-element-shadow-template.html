@@ -13,11 +13,10 @@
   console.log(markDoc);
 
   class HelloCustomElementShadowTemplate extends HTMLElement {
-    constructor() {
-      super();
+    connectedCallback() {
       const shadow = this.attachShadow({mode: 'open'});
-      const content = markDoc.querySelector('template').content.cloneNode(true);
-      shadow.appendChild(content);
+      const $child = markDoc.querySelector('template').content.cloneNode(true);
+      shadow.append($child);
     }
   }
 
