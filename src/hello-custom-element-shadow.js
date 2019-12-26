@@ -1,7 +1,7 @@
 class HelloCustomElementShadow extends HTMLElement {
   connectedCallback() {
-    let $child = toElement(`<i class="inner" style="background-color: yellowgreen">Hello, Custom Component with Shadow!</i>`);
     const shadow = this.attachShadow({mode: 'open'});
+    let $child = toElement(`<i class="inner" style="background-color: yellowgreen">Hello, Custom Component with Shadow!</i>`);
     shadow.append($child);
   }
 }
